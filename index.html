@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop-06</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="main_title">
+            <h1>
+                ¡Bienvenido usuario!
+            </h1>
+            <p>
+                Bienvenido usuario cibernetico!, a continuacion nos adentraremos en algunos temas importantes si queremos aprender y dominar <span>JavaScript</span>, que tengas un buen viaje!...
+            </p>
+        </section>
+        <section class="table_temas">
+            <table>
+                <tr>
+                    <td>Temas de interes</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#seccion1">Sección 1: Scope y Hoisting</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#seccion2">Sección 2: Funciones, Closures y Asincronía</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#seccion3">Sección 3: Closures, Promesas y Web APIs</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#seccion4">Sección 4: Entendiendo el Event Loop</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#seccion5">Sección 5: Aplicando Todos los Conceptos - Proyecto de Sistema de Reservas de Hotel</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <div class="title_seccion1">
+            <h1 id="seccion1">
+                <span>Sección 1</span> : Scope y Hoisting
+            </h1>
+            <p><span>Objetivo</span> : Comprender y aplicar correctamente los conceptos de scope global, local y de bloque, así como el hoisting en JavaScript.</p>
+        </div>
+        <section class="exercise1">
+            <div class="container_exercise1">
+                <div class="title_exercise1">
+                    <h2>
+                        <span>Ejercicio 1</span> : El quiz del Scope.
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise1">
+                    <p>
+                        Nuestro primer Quiz usuario!, estamos muy emocionados, pero concentremonos en el codigo mejor xD, tenemos una imagen de un codigo que demuestra el Scope (alcance) de algunas variables y funciones basicas de JS, analizemos...
+                    </p>
+                </div>
+                <div class="imagen_exercise1">
+                    <img src="mys-captures\ejercicio-1.png" alt="ejercicio 1">
+                </div>
+                <div class="parrafo2_exercise1">
+                    <p>
+                        Preparate usuario, te daré tu primera mision: Adivina lo que el codigo imprimirá en consola; Se que puedes usuario, confiamos en ti...
+                    </p>
+                </div>
+                <div class="boton_exercise1">
+                    <button id="boton_exercise1">¡Presiona!</button>
+                </div>
+            </div>
+        </section>
+        <section class="exercise2">
+            <div class="container_exercise2">
+                <div class="title_exercise2">
+                    <h2>
+                        <span>Ejercicio 2</span> : Hoisting en Práctica
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise2">
+                    <p>
+                        ¡Estuviste Fantastico en el primer Quiz usuario, felicidades!, Pero no bajes la guardia :), Te espera otra Gran Mision para aprender mas sobre el Scope y el Hoisting, analizemos...
+                    </p>
+                </div>
+                <div class="imagen_exercise2">
+                    <img src="mys-captures\ejercicio-2.png" alt="ejercicio 2">
+                </div>
+                <div class="parrafo2_exercise2">
+                    <p>
+                        Este codigo se copio en nuestro codigo interno, pero deberas primero predecir que es lo que sucederá con las variables declaradas con var, let y const, y con las funciones declarada y expresada, Buena Suerte...
+                    </p>
+                </div>
+                <div class="boton_exercise2">
+                    <button id="boton_exercise2">¡Presiona!</button>
+                </div>
+                <!-- //boton para mostrar el resultado -->
+                <button onclick="mostrarImagen()"  class="boton_resultado_exercise2">Mostrar Resultado</button>
+                <div id="modalImagen" class="modalImagen">
+                    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                    <img id="imagenModal" class="imagenModal">
+                </div>
+            </div>
+        </section>
+        <div class="title_seccion2">
+            <h1 id="seccion2">
+                <span>Sección 2</span> : Funciones, Closures y Asincronía
+            </h1>
+            <p><span>Objetivo</span> : Explorar la diferencia entre funciones declaradas y expresadas, manejar asincronía mediante el uso de callbacks y promesas, y comprender el funcionamiento del event loop.
+        </div>
+        <section class="exercise3">
+            <div class="container_exercise3">
+                <div class="title_exercise3">
+                    <h2>
+                        <span>Ejercicio 3</span> : Closures en Acción
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise3">
+                    <p>
+                        Este ejercicio te permitirá desarrollar un script que demuestra cómo los closures pueden capturar y mantener acceso a variables del scope de una función después de que esta haya terminado de ejecutarse.
+                    </p>
+                </div>
+                <div class="parrafo2_exercise3">
+                    <p>
+                        En este código, la función crearSumador() retorna una función interna que tiene acceso al parámetro numInicial de la función externa. Luego, cuando invocamos crearSumador(5), obtenemos una función que podemos usar para sumar cualquier número a 5. 
+                    </p>
+                </div>
+            </div>
+            <!-- son simples textos que me permiten hacer un ejemplo de codigo, para que se vea bonito :) -->
+            <div class="container_example">
+                <h1>Función con Closure</h1>
+                <div class="code">
+                    <div class="line">
+                        <span class="keyword">function</span> <span class="function">crearSumador</span>(<span class="parameter">numInicial</span>) {
+                    </div>
+                    <div class="line">
+                        <span class="indent"></span>< class="comment">// Dentro de la función crearSumador(), definimos y retornamos otra función</ span>
+                    </div>
+                    <div class="line">
+                        <span class="indent"></span><span class="keyword">return</span> <span class="keyword">function</span>(<span     class="parameter">num</span>) {
+                    </div>
+                    <div class="line">
+                        <span class="indent"></span><span class="indent"></span><span class="comment">// Retorna la suma del parámetro num con el   valor numInicial</span>
+                    </div>
+                    <div class="line">
+                        <span class="indent"></span><span class="indent"></span><span class="keyword">return</span> < class="variable">numInicial</ span> + <span class="variable">num</span>;
+                    </div>
+                    <div class="line">
+                        <span class="indent"></span><span class="keyword">}</span>;
+                    </div>
+                    <div class="line">
+                        <span class="keyword">}</span>
+                </div>
+                <div class="description">
+                    <p>La función <span class="function">crearSumador</span>() acepta un parámetro numérico y retorna otra función que sumará   cualquier número pasado como argumento al número inicial.</p>
+                </div>
+            </div>
+        </section>
+        <section class="exercise4">
+            <div class="container_exercise4">
+                <div class="title_exercise4">
+                    <h2>
+                        <span>Ejercicio 4</span> : Funciones Declaradas <span>vs</span> Expresadas
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise4">
+                    <p>
+                        ¡Hola de nuevo Usuario Cibernetico!, te entregaré una nueva mision, te entregaré el poder del conocimiento 🤩, bueno talvez no... Pero si quieres aprender mas sobre JS, te recomiendo que presiones el boton "COPY" que esta debajo de este texto, y copialo en tu consola, presiona F12, luego busca el apartado de "consola" y copialo y ejecutalo!!!  
+                    </p>
+                </div>
+                <button id="botonCopiar" class="boton_exercise4">Copy</button>
+                <div id="textoCopiar" style="display: none;">console.log(
+                    "Intentando llamar a 'funcionDeclarada' antes de su declaración:"
+                  );
+                  try {
+                    console.log(funcionDeclarada());
+                  } catch (error) {
+                    console.log("Error:", error.message);
+                  }
+                  
+                  console.log(
+                    "Intentando llamar a 'funcionExpresada' antes de su declaración:"
+                  );
+                  try {
+                    console.log(funcionExpresada());
+                  } catch (error) {
+                    console.log("Error:", error.message);
+                  }
+                  
+                  // Declaración de una función declarada
+                  function funcionDeclarada() {
+                    return "Función declarada ha sido llamada.";
+                  }
+                  
+                  // Declaración de una función expresada
+                  const funcionExpresada = function () {
+                    return "Función expresada ha sido llamada.";
+                  };
+                  
+                  console.log("Llamando a 'funcionDeclarada' después de su declaración:");
+                  console.log(funcionDeclarada());
+                  
+                  console.log("Llamando a 'funcionExpresada' después de su declaración:");
+                  console.log(funcionExpresada());</div>
+                <div class="parrafo2_exercise4">
+                    <p>
+                        Si lo lograste, te daras cuenta que intentamos llamar a dos funciones, una declarada y otra expresada, antes y después de su declaración. Tambien observamos la forma en la que se muestran las funciones en la consola; Para resumir el tema de funciones declaradas y expresadas diremos que ambas funciones pueden ser llamadas sin problemas "despues" de ser declaradas, pero cuando intentamos llamarlas "antes" de ser definidas nos daremos cuenta que las funciones expresadas no nos permiten acceder a ellas, en cambio, las declaradas si...
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="exercise5">
+            <div class="container_exercise5">
+                <div class="title_exercise5">
+                    <h2>
+                        <span>Ejercicio 5</span> : Promesas y Callbacks en Acción
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise5">
+                    <p>
+                        En este ejercicio la idea es entender como funciona una promesa y un callback, abajo de este texto adjunte una imagen de un codigo simple, en donde se manejan las promesas y los callbacks de forma conjunta, en una funcion, Analizemos...
+                    </p>
+                </div>
+                <div class="imagen_exercise5">
+                    <img src="mys-captures\ejercicio-5.png" alt="ejercicio 2">
+                </div>
+                <div class="parrafo2_exercise5">
+                    <p>
+                        ¡Excelente Usuario!, podemos destacar algunas cosas del codigo, en primer lugar, las promesas reciben 1 o 2 parametros que son reject y resolve, los utilizamos para el control y manejo de errores y de exitos de nuestro bloque de codigo, otro punto es que los callbacks se ejecutan despues de que la promesa tome una decision, ,son utilizadas para realizar una accion despues de que se complete una funcion especifica, ambas son herramientas muy utiles... 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="exercise6">
+            <div class="container_exercise6">
+                <div class="title_exercise6">
+                    <h2>
+                        <span>Ejercicio 6</span> : Event Loop y Web APIs
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise6">
+                    <p>
+                        Buenas buenas, en este ejercicio encontraremos una breve explicacion de como (mas o menos) funciona el Event Loop y el setTimeOut() en JS, debajo de este texto dejaré una imagen de un codigo que contiene los temas antes mencionados, Analizemos...
+                    </p>
+                </div>
+                <div class="imagen_exercise6">
+                    <img src="mys-captures\ejercicio-6.png" alt="ejercicio 2">
+                </div>
+                <div class="parrafo2_exercise6">
+                    <p>
+                        Este tema puede ser algo complicado de explicar, pero lo podemos resumir a Event Loop y tareas asincronas y sincronas, empecemos a explicar que es lo que pasa en este codigo...<br><br>1 question: Porque se ejecuta asi el codigo? Podemos apreciar que en nuestro codigo hay 2 setTimeOut, estos elementos son considerados por JS como tareas asincronas, lo que significa que tienen que esperar a que ocurra cualquier evento para que se ejecuten, en este caso los segundos que le ponemos al final;<br><br> JavaScript ejecuta su codigo de la siguiente manera: primero busca todas las tareas sincronas, es decir, las que no tienen ningun bloqueo ni condicion para ejecutarse, y se ejecutan de arriba hacia abajo, despues que se ejecuten todas las tareas sincronas, empieza a buscar las tareas asincronas, que ya las explique, ya aqui entra la condicion setTimeOut, le pasamos un parametro de milisegundos, y el codigo evalua cual funcion tiene que esperar mas tiempo para ejecutarse, y finalmente ordena el que tenga menos bloqueos o en este caso segundos y los ordena de menor a mayor... <br><br>Como conclusion, se ejecuta primero el console.log() que esta al principio del codigo, aunque lo podemos poner en cualquier lugar, luego se ejecuta el primer setTimeOut() ya que tiene menos segundos por esperar, y finalmente se ejecuta el segundo setTimeOut()... me canse 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="exercise7">
+            <div class="container_exercise7">
+                <div class="title_exercise7">
+                    <h2>
+                        <span>Ejercicio 7</span> : Considera el siguiente script:
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise7">
+                    <p>
+                        Ok Usuario, es hora de aplicar lo aprendido, ya te explique el flujo de JS y como se organizan de arriba hacia abajo, entonces empecemos a analizar el siguiente codigo...
+                    </p>
+                </div>
+                <div class="imagen_exercise7">
+                    <img src="mys-captures\ejercicio-7.png" alt="ejercicio 2">
+                </div>
+                <div class="parrafo2_exercise7">
+                    <p>
+                        ¿Ya lo analizaste?, ¿No?, no me importa xD, tendrás que decirme el orden en el que se van a imprimir en la consola los console.log, presiona el boton cuando estes listo...
+                    </p>
+                </div>
+                <div class="boton_exercise7">
+                    <button id="boton_exercise7">¡Presiona!</button>
+                </div>
+            </div>
+        </section>
+        <div class="title_seccion3">
+            <h1 id="seccion3">
+                <span>Seccion 3</span> : Closures, Promesas y web APIs
+            </h1>
+            <p><span>Objetivo</span> : Aplicar closures y entender el funcionamiento de las Web APIs en JavaScript.</p>
+        </div>
+        <section class="exercise8">
+            <div class="container_exercise8">
+                <div class="title_exercise8">
+                    <h2>
+                        <span>Ejercicio 8</span> : Magia con Closures
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise8">
+                    <p>
+                        ¡Has conseguido llegar hasta aqui Usuario!, que travesia, supongo que has aprendido un poco, pero no lo suficiente 🤪, bienvenido a la seccion 3, aqui aprenderemos un poco mas sobre Closures, Promesas y WEB API's, preparate..., Abajo de este texto hay un fragmento de un codigo interno, dedicado para hacerte ver lo útiles que son los Closures y lo que podemos hacer...
+                    </p>
+                </div>
+                <div class="imagen_exercise8">
+                    <img src="mys-captures\ejercicio-8.png" alt="ejercicio 2">
+                </div>
+                <div class="parrafo2_exercise8">
+                    <p>
+                        El codigo maneja de forma interna un contador, el cual nosotros mediante un mensaje podemos sumarle progresivamente numeros al contador, ¡pruebalo!...
+                    </p>
+                </div>
+                <div class="boton_exercise8">
+                    <button id="boton_exercise8">¡Presiona!</button>
+                </div>
+            </div>
+        </section>
+        <section class="exercise9">
+            <div class="container_exercise9">
+                <div class="title_exercise9">
+                    <h2>
+                        <span>Ejercicio 9</span> : Domina las Web APIs con Promesas y Fetch
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise9">
+                    <p>
+                        ¡Hello my User! no se mucho ingles, pero lo que si sé es que necesitas aprender sobre las WEB API's, asi que presta atencion, primero hay varios conceptos nuevos, por ejemplo el fetch, el fetch() devuelve una promesa que se resuelve cuando se completa la solicitud HTTP y se recibe la respuesta del servidor, se utiliza cuando queremos obtener datos de un servidor, y el throw new error crea un nuevo objeto de error con el mensaje especificado y se arroja como una excepción. Sabiendo esto, podemos analizar muy bien el siguiente codigo, tomate tu tiempo...
+                    </p>
+                </div>
+                <div class="imagen_exercise9">
+                    <img src="mys-captures\ejercicio-9.png" alt="ejercicio 2">
+                </div>
+                <div class="parrafo2_exercise9">
+                    <p>
+                        El codigo utiliza las promesas y la WEB API fetch para obtener datos de una url con un codigo JSON, nosotros como usuarios podremos manejar el tiempo que queramos que tarde el servidor en enviar esos datos, cuando quieras presiona el boton de abajo!
+                    </p>
+                </div>
+                <div class="boton_exercise9">
+                    <button id="boton_exercise9">¡Presiona!</button>
+                </div>
+            </div>
+        </section>
+        <div class="title_seccion4">
+            <h1 id="seccion4">
+                <span>Seccion 4</span> : Entendiendo el Event Loop a profundidad
+            </h1>
+            <p><span>Objetivo</span> : Comprender el funcionamiento del event loop y las Web APIs en JavaScript con una herramienta de visualización.</p>
+        </div>
+        <section class="exercise10">
+            <div class="container_exercise10">
+                <div class="title_exercise10">
+                    <h2>
+                        <span>Ejercicio 10</span> : Visualización del Event Loop
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise10">
+                    <p>
+                        ¡Hola de nuevo Usuario Cibernetico!, ahora podras ver desde otro punto de vista como se ejecuta el Event Loop, debajo de este texto hay un boton, si lo presionas copiaras un codigo de ejemplo y serás redirigido a otra pagina donde podras ver el event loop en todo su esplendor, cuando quieras!
+                    </p>
+                </div>
+                <button id="botonCopiar10" class="boton_exercise10">Copy</button>
+                <div id="textoCopiar10" style="display: none;">console.log("Inicio del script");
+
+                    // Macrotarea: setTimeout
+                    setTimeout(() => {
+                      console.log("Macrotarea 1 second (setTimeout)");
+                    }, 1000);
+                    
+                    setTimeout(() => {
+                      console.log("Macrotarea 0 seconds (setTimeout)");
+                    }, 0);
+                    
+                    // Microtarea: Promesa
+                    Promise.resolve()
+                      .then(() => {
+                        setTimeout(() => {
+                          console.log("Macrotarea (setTimeout) inside Microtarea 1");
+                          return "from micro 1";
+                        }, 0);
+                      })
+                      .then((message) => {
+                        console.log("Microtarea 2 (Promesa)");
+                      });
+                    
+                    // Microtarea: Promesa
+                    Promise.resolve()
+                      .then(() => {
+                        console.log("Microtarea 3 (Promesa)");
+                      })
+                      .then(() => {
+                        console.log("Microtarea 4 (Promesa)");
+                      });
+                    
+                    console.log("Fin del script");</div>
+                <div class="parrafo2_exercise10">
+                    <p>
+                        Si lo lograste, te daras cuenta que a pesar de que en el codigo que copiaste habia un orden especifico, el resultado fue totalmente diferente, eso es debido al Event Loop, verás... el event loop es la manera en la que JS lee las tareas en un codigo y la forma en la que los ejecuta; Hay tres puntos a tener claros: <br><br>1: Macrotareas : son tareas asíncronas que se ejecutan después de que el event loop ha completado la fase actual, en el código dado, las macrotareas son los temporizadores setTimeout() con un tiempo de espera de 1000ms y 0ms, estas tareas se agregan a la cola de macrotareas y se ejecutan después de que se completan todas las microtareas <br><br>2: Microtareas : son tareas asíncronas que se ejecutan después de que se resuelvan las promesas y antes de que se ejecuten las macrotareas en la siguiente iteración del event loop, en el código dado, las microtareas son las funciones then() asociadas con las promesas resueltas, estas tareas se agregan a la cola de microtareas y se ejecutan antes de las macrotareas en la siguiente iteración del event loop. <br><br> En resumen, las macrotareas se ejecutan después de que se completan todas las microtareas, y las microtareas se ejecutan antes de las macrotareas en cada iteración del event loop.
+
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="title_seccion5">
+            <h1 id="seccion5">
+                <span>Seccion 5</span> : Aplicando Todos los Conceptos - Proyecto de Sistema de Reservas de Hotel
+            </h1>
+            <p><span>Objetivo</span> : Desarrollar un sistema de reservas de hotel que permita a los usuarios reservar habitaciones, verificar disponibilidad, ver sus reservas actuales y cancelar reservas. Este sistema integrará los conceptos de scope, hoisting, closures, funciones declaradas y expresadas, asincronía, promesas, callbacks, y operaciones con Web APIs.</p>
+        </div>
+        <section class="exercise11">
+            <div class="container_exercise11">
+                <div class="title_exercise11">
+                    <h2>
+                        <span>Ultimo Ejercicio</span>: Nuestro primer proyecto
+                    </h2>
+                </div>
+                <div class="parrafo1_exercise11">
+                    <p>
+                        ¡Uff que travesía Usuario!, pero no hay tiempo para descansar, hemos llegado hasta aqui, ahora hay que demostrar lo que hemos aprendido de JS y haremos nuestro primer proyecto con este Maravilloso lenguaje de programacion; La idea principal será hacer un programa con la tematica de HOTEL, haremos un programa que te ayude a reservar habitaciones, verificar disponibilidad, ver sus reservas actuales y cancelar reservas, todo con lo que hemos aprendido hasta ahora, ¿preparado?, ¿no?, no me importa, sigueme los pasos...
+                    </p>
+                </div>
+                <div class="primer_paso">
+                    <p><span>Primer paso</span> : Definimos una funcion que por ahora nos permita visualizar las habitacion desde la consola </p>
+                </div>
+                <div class="imagen_exercise11">
+                    <img src="mys-captures\ejercicio-11.png" alt="final exercise">
+                </div>
+                <div class="parrafo2_exercise11">
+                    <p>
+                        El codigo utiliza las promesas y la WEB API fetch para obtener datos de una url con un codigo JSON, nosotros como usuarios podremos manejar el tiempo que queramos que tarde el servidor en enviar esos datos, cuando quieras presiona el boton de abajo!
+                    </p>
+                </div>
+                <div class="boton_exercise11">
+                    <button id="boton_exercise11">¡Presiona!</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="app.js"></script>
+</html>

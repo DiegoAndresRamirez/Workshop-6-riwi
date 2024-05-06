@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+:root {
+    --background: #29263D;
+    --table-background: #29263D;
+    --primary: #ffd45e;
+    --text-color: #FFFFFF;
+    --gray: #A0A7B1;
+    --th-background: #2E2B43;
+}
+
+*,  
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Jersey 15", sans-serif;
+    background-image: url(./mys-captures/fotor-ai-202404283133.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+p,h1,h2,h3,h4,h5,h6{
+    color: var(--text-color);
+}
+
+.main_title{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    h1{
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+    p{
+        font-size: 40px;
+        padding: 20px;
+        span{
+            color: var(--primary);
+        }
+    }
+}
+
+.table_temas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.table_temas td {
+    color: var(--primary);
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 30px;
+}
+.table_temas td a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+.table_temas td a:hover {
+    color: #007bff;
+}
+
+.title_seccion1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    h1{
+        font-size: 50px;
+    }
+    span{
+        color: var(--primary);
+    }
+    p{
+        font-size: 30px;
+    }
+}
+/* estilos para el primer ejercicio */
+.container_exercise1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.title_exercise1 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise1 {
+    font-size: 30px;
+}
+.imagen_exercise1 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise1 {
+    font-size: 30px;
+}
+.boton_exercise1{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 80px;
+    border-bottom: 1px solid gray;
+}
+/* estilos para el segundo ejercicio */
+.container_exercise2 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise2 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise2 {
+    font-size: 30px;
+}
+.imagen_exercise2 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise2 {
+    font-size: 30px;
+}
+.boton_exercise2{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 20px;
+}
+/* estilos para mostrar el resultado */
+.modalImagen {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Estilos para el boton de cerrar */
+.cerrar {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para la imagen dentro del modal */
+.imagenModal {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; 
+    max-height: 80%;
+}
+.boton_resultado_exercise2{
+    padding: 20px 100px;
+    background-color: var(--background);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 50px;
+}
+
+.title_seccion2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    h1{
+        font-size: 50px;
+    }
+    span{
+        color: var(--primary);
+    }
+    p{
+        font-size: 30px;
+    }
+}
+
+/* //estilos para el tercer ejercicio */
+.container_exercise3 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise3 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise3 {
+    font-size: 30px;
+}
+.parrafo2_exercise3 {
+    font-size: 30px;
+}
+.boton_exercise3{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 20px;
+}
+/* //estilos de el ejemplo de codigo, algo simple*/
+
+.container_example {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background);
+    border: 2px solid black;
+    border-radius: 50px;
+    h1{
+        color: var(--primary);
+        font-size: 40px;
+    }
+}
+
+.code {
+    background-color: #f5f5f5;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.line {
+    white-space: nowrap;
+    color: black;
+}
+
+.keyword {
+    color: #007bff;
+    font-size: 20px;
+}
+
+.function {
+    color: #7952b3;
+    font-size: 20px;
+}
+
+.parameter {
+    color: #28a745;
+    font-size: 20px;
+}
+
+.variable {
+    color: #17a2b8;
+    font-size: 20px;
+}
+
+.comment {
+    color: #6c757d;
+}
+
+.indent {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.description {
+    margin-top: 20px;
+    font-size: 20px;
+    p{
+        color: black;
+        font-size: 20px;
+    }
+}
+
+/* estilos para el ejercicio 4 */
+.container_exercise4 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise4 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise4 {
+    font-size: 30px;
+}
+.parrafo2_exercise4 {
+    font-size: 30px;
+}
+.boton_exercise4{
+    padding: 20px 100px;
+    background-color: var(--background);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 20px;
+}
+/* estilos para el ejercicio 5 */
+.container_exercise5 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise5 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise5 {
+    font-size: 30px;
+}
+.imagen_exercise5 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise5 {
+    font-size: 30px;
+}
+
+/* estilos para el ejercicio 6 */
+
+.container_exercise6 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise6 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise6 {
+    font-size: 30px;
+}
+.imagen_exercise6 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise6 {
+    font-size: 30px;
+}
+/* estilos para el ejercicio 7 */
+
+.container_exercise7 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise7 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise7 {
+    font-size: 30px;
+}
+.imagen_exercise7 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise7 {
+    font-size: 30px;
+}
+.boton_exercise7{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 20px;
+}
+/* titulo seccion 3 */
+
+.title_seccion3{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    h1{
+        font-size: 50px;
+    }
+    span{
+        color: var(--primary);
+    }
+    p{
+        font-size: 30px;
+    }
+}
+
+/* estilos para el ejercicio 8 */
+
+
+.container_exercise8 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise8 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise8 {
+    font-size: 30px;
+}
+.imagen_exercise8 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise8 {
+    font-size: 30px;
+}
+.boton_exercise8{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 20px;
+}
+/* estilos para el ejercicio 9 */
+
+
+.container_exercise9 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise9 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise9 {
+    font-size: 30px;
+}
+.imagen_exercise9 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise9 {
+    font-size: 30px;
+}
+.boton_exercise9{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 20px;
+}
+
+/* titulo seccion 4 */
+
+.title_seccion4{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    h1{
+        font-size: 50px;
+    }
+    span{
+        color: var(--primary);
+    }
+    p{
+        font-size: 30px;
+    }
+}
+
+/* estilos para el ejercicio 10 */
+
+.container_exercise10 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise10 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise10 {
+    font-size: 30px;
+}
+.parrafo2_exercise10 {
+    font-size: 30px;
+}
+.boton_exercise10{
+    padding: 20px 100px;
+    background-color: var(--background);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+/* estilos para la seccion 5 */
+
+.title_seccion5{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    h1{
+        font-size: 50px;
+    }
+    span{
+        color: var(--primary);
+    }
+    p{
+        font-size: 30px;
+    }
+}
+/* estilos para el ultimo ejercicio */
+
+
+.container_exercise11 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.title_exercise11 {
+    font-size: 25px;
+    span{
+        color: var(--primary);
+    }
+}
+.parrafo1_exercise11 {
+    font-size: 30px;
+}
+.imagen_exercise11 {
+    width: 80%;
+    img{
+        width: 100%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+}
+.parrafo2_exercise11 {
+    font-size: 30px;
+}
+.boton_exercise11{
+    button{
+        padding: 20px 100px;
+        background-color: var(--background);
+        color: var(--primary);
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    padding-bottom: 20px;
+}
+.primer_paso{
+    p{
+        font-size: 30px;
+    }
+    span{
+        color: var(--primary);
+    }
+}
